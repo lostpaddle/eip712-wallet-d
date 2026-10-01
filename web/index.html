@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EIP-712 手机签名 Demo</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 24px; color: #1f2937 }
+      button { padding: 8px 16px; margin: 4px 8px 4px 0; border-radius: 6px; border: 1px solid #9ca3af; background: #fff; cursor: pointer }
+      button:disabled { opacity: .4; cursor: not-allowed }
+      #qr { border: 1px solid #e5e7eb; border-radius: 8px; margin: 8px 0 }
+      #uri { font-size: 11px; word-break: break-all; max-width: 480px; color: #6b7280 }
+      #log { white-space: pre-wrap; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; max-width: 640px; min-height: 120px; font-size: 13px }
+      input { padding: 6px 10px; width: 280px; border: 1px solid #9ca3af; border-radius: 6px }
+    </style>
+  </head>
+  <body>
+    <h2>EIP-712 手机钱包签名 Demo（网页端）</h2>
+    <p>
+      Relay：<input id="relayUrl" value="ws://localhost:8787" />
+      <button id="initBtn">1. 初始化客户端</button>
+    </p>
+    <p>
+      <button id="connectBtn" disabled>2. 连接钱包（显示二维码）</button>
+      <button id="signBtn" disabled>3. 请求 EIP-712 签名并验签</button>
+    </p>
+    <canvas id="qr"></canvas>
+    <p id="uri"></p>
+    <h3>流程日志</h3>
+    <div id="log"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
